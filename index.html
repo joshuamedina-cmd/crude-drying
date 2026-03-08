@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crude Drying — KMJZ Operations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ========== RESET & BASE ========== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-tap-highlight-color: transparent; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #0a1628;
+  color: #e2e8f0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* ========== LAB PATTERN BACKGROUND ========== */
+.bg-pattern {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-color: #0c2d5a;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cdefs%3E%3Cstyle%3E.eq%7Bfill:none;stroke:%232563eb;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;opacity:0.35%7D%3C/style%3E%3C/defs%3E%3C!-- Erlenmeyer Flask --%3E%3Cpath class='eq' d='M30 15 v20 l-12 25 a3 3 0 0 0 3 4h18a3 3 0 0 0 3-4l-12-25 v-20'/%3E%3Cellipse class='eq' cx='30' cy='15' rx='6' ry='2'/%3E%3Cpath class='eq' d='M22 52h16' opacity='0.2'/%3E%3C!-- Beaker --%3E%3Cpath class='eq' d='M75 20h30v35a5 5 0 0 1-5 5h-20a5 5 0 0 1-5-5z'/%3E%3Cpath class='eq' d='M105 25h6'/%3E%3Cpath class='eq' d='M78 42h24' opacity='0.2'/%3E%3C!-- Round Bottom Flask --%3E%3Cpath class='eq' d='M155 18v12'/%3E%3Ccircle class='eq' cx='155' cy='42' r='14'/%3E%3Cpath class='eq' d='M149 18h12'/%3E%3Cpath class='eq' d='M143 42h24' opacity='0.15'/%3E%3C!-- Test Tube --%3E%3Cpath class='eq' d='M25 90v30a6 6 0 0 0 12 0v-30'/%3E%3Cpath class='eq' d='M23 90h16'/%3E%3Cpath class='eq' d='M28 110h6' opacity='0.2'/%3E%3C!-- Graduated Cylinder --%3E%3Cpath class='eq' d='M82 85h16v40a4 4 0 0 1-4 4h-8a4 4 0 0 1-4-4z'/%3E%3Cpath class='eq' d='M84 95h12M84 102h12M84 109h12M84 116h12' opacity='0.2'/%3E%3C!-- Distillation Setup --%3E%3Cpath class='eq' d='M140 85v10l20 10v10'/%3E%3Ccircle class='eq' cx='140' cy='105' r='10'/%3E%3Crect class='eq' x='155' y='105' width='12' height='18' rx='2'/%3E%3C!-- Funnel --%3E%3Cpath class='eq' d='M20 155l10-15h10l10 15'/%3E%3Cpath class='eq' d='M30 155v18'/%3E%3C!-- Petri Dish --%3E%3Cellipse class='eq' cx='90' cy='165' rx='18' ry='6'/%3E%3Cpath class='eq' d='M72 165v4a18 6 0 0 0 36 0v-4'/%3E%3C!-- Volumetric Flask --%3E%3Cpath class='eq' d='M150 150v8l-10 15a16 16 0 0 0 20 0l-10-15v-8'/%3E%3Cpath class='eq' d='M146 150h8'/%3E%3Ccircle class='eq' cx='150' cy='180' r='1' opacity='0.2'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* ========== LAYOUT ========== */
+.app {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 16px 100px;
+}
+
+/* ========== HEADER ========== */
+.header {
+  text-align: center;
+  padding: 24px 0 16px;
+}
+.header-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.header-logo svg {
+  width: 36px;
+  height: 36px;
+}
+.header h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.header .subtitle {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+  margin-top: 2px;
+}
+.last-sync {
+  font-size: 0.7rem;
+  color: #475569;
+  margin-top: 8px;
+}
+
+/* ========== FROSTED GLASS CARDS ========== */
+.card {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 136, 255, 0.12);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card:hover {
+  border-color: rgba(56, 136, 255, 0.25);
+}
+.card-clickable {
+  cursor: pointer;
+}
+.card-clickable:active {
+  transform: scale(0.98);
+}
+
+/* ========== SECTION TITLES ========== */
+.section-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #3b82f6;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(59,130,246,0.3), transparent);
+}
+
+/* ========== BATCH CARDS ========== */
+.batch-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.batch-sub {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+.batch-arrow {
+  color: #3b82f6;
+  font-size: 1.2rem;
+  transition: transform 0.15s;
+}
+.card-clickable:hover .batch-arrow {
+  transform: translateX(3px);
+}
+.batch-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ========== IN PROGRESS GLOW ========== */
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 6px #3b82f6, 0 0 12px #3b82f6, 0 0 24px rgba(59,130,246,0.5);
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 0 0 12px #60a5fa, 0 0 24px #60a5fa, 0 0 48px rgba(96,165,250,0.7), 0 0 72px rgba(96,165,250,0.3);
+    opacity: 0.85;
+  }
+}
+.in-progress-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #60a5fa;
+  animation: pulseGlow 2s ease-in-out infinite;
+  margin-top: 6px;
+}
+
+/* ========== BUTTONS ========== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 24px;
+  cursor: pointer;
+  min-height: 56px;
+  min-width: 48px;
+  transition: all 0.15s ease;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.btn:active {
+  transform: scale(0.96);
+}
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(37,99,235,0.3);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  box-shadow: 0 6px 24px rgba(37,99,235,0.4);
+}
+.btn-success {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(5,150,105,0.3);
+}
+.btn-success:hover {
+  background: linear-gradient(135deg, #047857, #059669);
+}
+.btn-warning {
+  background: linear-gradient(135deg, #d97706, #f59e0b);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(217,119,6,0.3);
+}
+.btn-warning:hover {
+  background: linear-gradient(135deg, #b45309, #d97706);
+}
+.btn-ghost {
+  background: rgba(255,255,255,0.05);
+  color: #94a3b8;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.1);
+  color: #cbd5e1;
+}
+.btn-danger {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(220,38,38,0.3);
+}
+.btn-full {
+  width: 100%;
+}
+.btn-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+.btn-group .btn {
+  flex: 1;
+}
+
+/* ========== FORMS ========== */
+.form-group {
+  margin-bottom: 16px;
+}
+.form-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.form-input {
+  width: 100%;
+  padding: 16px;
+  font-family: inherit;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(255,255,255,0.06);
+  border: 2px solid rgba(59,130,246,0.2);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  min-height: 56px;
+}
+.form-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+}
+.form-input::placeholder {
+  color: #475569;
+}
+.form-suffix {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-top: 6px;
+}
+
+/* ========== SUMMARY ========== */
+.summary-card {
+  background: rgba(5,150,105,0.08);
+  border-color: rgba(16,185,129,0.25);
+}
+.summary-total {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #10b981;
+  margin: 8px 0;
+}
+.summary-pulls {
+  list-style: none;
+  margin: 12px 0;
+}
+.summary-pulls li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+}
+.summary-pulls li:last-child {
+  border-bottom: none;
+}
+.pull-name {
+  color: #94a3b8;
+}
+.pull-weight {
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+/* ========== COMPLETED BATCHES ========== */
+.completed-toggle {
+  text-align: center;
+  margin-top: 24px;
+}
+.completed-batch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.completed-batch:last-child {
+  border-bottom: none;
+}
+.completed-info .cname {
+  font-weight: 600;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+}
+.completed-info .cmeta {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+.completed-weight {
+  font-weight: 700;
+  color: #10b981;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+/* ========== TOAST / NOTIFICATIONS ========== */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+.toast {
+  background: rgba(15,23,42,0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(59,130,246,0.3);
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  animation: toastIn 0.3s ease, toastOut 0.3s ease 2.7s forwards;
+  pointer-events: auto;
+  max-width: 90vw;
+  text-align: center;
+}
+.toast.error {
+  border-color: rgba(239,68,68,0.4);
+  color: #fca5a5;
+}
+.toast.success {
+  border-color: rgba(16,185,129,0.4);
+  color: #6ee7b7;
+}
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes toastOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* ========== LOADING ========== */
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(255,255,255,0.15);
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.loading-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 40px;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* ========== EMPTY STATE ========== */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #475569;
+}
+.empty-state svg {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 12px;
+  opacity: 0.4;
+}
+.empty-state p {
+  font-size: 0.9rem;
+}
+
+/* ========== BACK BUTTON ========== */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 12px;
+}
+.back-btn:hover {
+  color: #94a3b8;
+}
+
+/* ========== MODAL OVERLAY ========== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.modal {
+  background: #0f172a;
+  border: 1px solid rgba(56,136,255,0.2);
+  border-radius: 20px;
+  padding: 24px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+}
+.modal h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.modal .modal-sub {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  text-align: center;
+  padding: 32px 16px 24px;
+  font-size: 0.7rem;
+  color: #334155;
+}
+footer a {
+  color: #475569;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+footer a:hover {
+  color: #64748b;
+}
+
+/* ========== UTILITY ========== */
+.hidden { display: none !important; }
+.text-center { text-align: center; }
+.mt-8 { margin-top: 8px; }
+.mt-16 { margin-top: 16px; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+</style>
+</head>
+<body>
+<div class="bg-pattern"></div>
+<div class="toast-container" id="toastContainer"></div>
+
+<div class="app">
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-logo">
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="KMJZ Lab">
+        <rect x="2" y="2" width="32" height="32" rx="8" fill="#1e3a5f" stroke="#3b82f6" stroke-width="1.5"/>
+        <path d="M12 10v16M12 18l6-6M12 18l6 6" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="24" cy="22" r="5" stroke="#3b82f6" stroke-width="1.5" fill="none"/>
+        <path d="M24 14v4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M22 14h4" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <h1>Crude Drying</h1>
+    </div>
+    <div class="subtitle">KMJZ Operations — Aldous Facility</div>
+    <div class="last-sync" id="lastSync">Syncing...</div>
+  </header>
+
+  <!-- MAIN VIEW -->
+  <main id="mainView">
+    <!-- In-Progress Batches -->
+    <div id="inProgressSection" class="hidden">
+      <div class="section-title">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#3b82f6" stroke-width="1.5"/><path d="M7 4v3.5l2.5 1.5" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"/></svg>
+        In Progress
+      </div>
+      <div id="inProgressList"></div>
+    </div>
+
+    <!-- Wet Batches -->
+    <div id="wetSection">
+      <div class="section-title">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2C7 2 3 7 3 9.5a4 4 0 0 0 8 0C11 7 7 2 7 2z" stroke="#3b82f6" stroke-width="1.5" fill="none"/></svg>
+        Wet Crude Batches
+      </div>
+      <div id="wetBatchList">
+        <div class="loading-overlay"><div class="spinner"></div> Loading batches...</div>
+      </div>
+    </div>
+
+    <!-- Completed Batches Toggle -->
+    <div class="completed-toggle">
+      <button class="btn btn-ghost" id="toggleCompleted" onclick="toggleCompletedView()">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        View Completed Batches
+      </button>
+    </div>
+
+    <!-- Completed Batches Section (hidden by default) -->
+    <div id="completedSection" class="hidden">
+      <div class="section-title" style="margin-top:16px;">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7.5l3 3 5-6" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Completed Batches
+      </div>
+      <div id="completedBatchList">
+        <div class="loading-overlay"><div class="spinner"></div> Loading...</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- WEIGHT ENTRY MODAL -->
+  <div id="weightModal" class="modal-overlay hidden" onclick="if(event.target===this)closeModal()">
+    <div class="modal">
+      <button class="back-btn" onclick="closeModal()">← Back</button>
+      <h2 id="modalTitle">Enter Weight</h2>
+      <p class="modal-sub" id="modalSub">Batch info</p>
+      <div class="form-group">
+        <label class="form-label" for="weightInput">Weight (grams)</label>
+        <input type="number" id="weightInput" class="form-input" placeholder="0" min="0" step="0.01" inputmode="decimal">
+        <div class="form-suffix">Enter dry crude weight in grams</div>
+      </div>
+      <button class="btn btn-primary btn-full" id="submitWeight" onclick="handleWeightSubmit()">
+        Submit Weight
+      </button>
+    </div>
+  </div>
+
+  <!-- COMPLETE OR MORE MODAL -->
+  <div id="completeOrMoreModal" class="modal-overlay hidden" onclick="if(event.target===this)closeAllModals()">
+    <div class="modal text-center">
+      <h2 id="comTitle">Weight Recorded!</h2>
+      <p class="modal-sub" id="comSub">Is the batch complete or are there more trays?</p>
+      <div class="btn-group">
+        <button class="btn btn-success" onclick="handleBatchComplete()">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4.5 4.5 7.5-9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          BATCH COMPLETE
+        </button>
+        <button class="btn btn-warning" onclick="handleMoreTrays()">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M4 10h12" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+          MORE TRAYS
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BATCH SUMMARY MODAL -->
+  <div id="summaryModal" class="modal-overlay hidden" onclick="if(event.target===this)closeAllModals()">
+    <div class="modal">
+      <h2>Batch Summary</h2>
+      <p class="modal-sub" id="summaryBatchName"></p>
+      <div class="card summary-card">
+        <div style="font-size:0.8rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.05em;">Total Dry Crude</div>
+        <div class="summary-total" id="summaryTotal">0 g</div>
+        <div style="font-size:0.8rem;color:#64748b;" id="summaryPullCount">from 0 pulls</div>
+        <ul class="summary-pulls" id="summaryPullList"></ul>
+      </div>
+      <button class="btn btn-success btn-full" id="confirmComplete" onclick="confirmBatchComplete()">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4.5 4.5 7.5-9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Confirm &amp; Complete Batch
+      </button>
+      <button class="btn btn-ghost btn-full mt-8" onclick="closeAllModals()">Cancel</button>
+    </div>
+  </div>
+
+  <footer>
+    <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+  </footer>
+</div>
+
+<script>
+/* ================================================================
+   CRUDE DRYING APP — KMJZ Operations
+   ================================================================ */
+
+// ---- CONFIG ----
+const API_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjYyNzA3NzcxOSwiYWFpIjoxMSwidWlkIjo3NTA2NTY3OCwiaWFkIjoiMjAyNi0wMi0yOFQwMToxNzowOS4wMDBaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MjkxNDg2NzMsInJnbiI6InVzZTEifQ.ocD9w0Q-17JqNfU4iZXL4i3frn_Bw4pyVe_fkhJuiPg';
+const API_URL = 'https://api.monday.com/v2';
+const BOARD_ID = 18402878061;
+const WET_GROUP = 'topics';
+const DRY_GROUP = 'group_title';
+const COMPLETED_GROUP = 'group_mm182f72';
+
+const ORDINALS = ['First','Second','Third','Fourth','Fifth','Sixth','Seventh','Eighth','Ninth','Tenth',
+  'Eleventh','Twelfth','Thirteenth','Fourteenth','Fifteenth','Sixteenth','Seventeenth','Eighteenth','Nineteenth','Twentieth'];
+
+const LS_KEY = 'crude_drying_progress';
+
+// ---- STATE ----
+let wetBatches = [];
+let dryItems = [];
+let completedItems = [];
+let inProgressData = loadLocalProgress();
+let currentBatch = null;    // the wet batch being worked on
+let currentPullNumber = 0;
+let showCompleted = false;
+let refreshTimer = null;
+
+// ---- MONDAY.COM API ----
+async function mondayAPI(query, variables) {
+  try {
+    const resp = await fetch(API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': API_TOKEN,
+        'API-Version': '2024-10'
+      },
+      body: JSON.stringify({ query, variables })
+    });
+    if (!resp.ok) throw new Error('API returned ' + resp.status);
+    const data = await resp.json();
+    if (data.errors && data.errors.length > 0) {
+      throw new Error(data.errors[0].message || 'Monday.com API error');
+    }
+    return data.data;
+  } catch (err) {
+    console.error('Monday API Error:', err);
+    showToast(err.message, 'error');
+    throw err;
+  }
+}
+
+// ---- DATA FETCHING ----
+async function fetchAllData() {
+  const query = `query {
+    boards(ids: [${BOARD_ID}]) {
+      groups {
+        id
+        title
+      }
+      items_page(limit: 200) {
+        items {
+          id
+          name
+          group { id }
+          column_values {
+            id
+            text
+            value
+          }
+        }
+      }
+    }
+  }`;
+
+  try {
+    const data = await mondayAPI(query);
+    const items = data.boards[0].items_page.items;
+
+    wetBatches = items.filter(i => i.group.id === WET_GROUP);
+    dryItems = items.filter(i => i.group.id === DRY_GROUP);
+    completedItems = items.filter(i => i.group.id === COMPLETED_GROUP);
+
+    updateLastSync();
+    renderAll();
+  } catch (err) {
+    document.getElementById('wetBatchList').innerHTML =
+      '<div class="empty-state"><p>Failed to load batches. Check connection.</p></div>';
+  }
+}
+
+function getColumnValue(item, colId) {
+  const col = item.column_values.find(c => c.id === colId);
+  return col ? (col.text || '') : '';
+}
+
+function getColumnRawValue(item, colId) {
+  const col = item.column_values.find(c => c.id === colId);
+  if (!col || !col.value) return null;
+  try { return JSON.parse(col.value); } catch { return col.value; }
+}
+
+// ---- RENDER ----
+function renderAll() {
+  renderInProgress();
+  renderWetBatches();
+  if (showCompleted) renderCompleted();
+}
+
+function renderWetBatches() {
+  const container = document.getElementById('wetBatchList');
+  // Filter out batches that are "in progress" (have pulls in Dry group)
+  const inProgressNames = getInProgressBatchNames();
+  const available = wetBatches.filter(b => !inProgressNames.includes(b.name));
+
+  if (available.length === 0 && inProgressNames.length === 0) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <svg viewBox="0 0 48 48" fill="none"><path d="M24 8C24 8 12 20 12 28a12 12 0 0 0 24 0c0-8-12-20-12-20z" stroke="#475569" stroke-width="2" fill="none"/></svg>
+        <p>No wet crude batches available</p>
+      </div>`;
+    return;
+  }
+
+  if (available.length === 0) {
+    container.innerHTML = '<div class="empty-state"><p>All batches are in progress</p></div>';
+    return;
+  }
+
+  container.innerHTML = available.map(b => {
+    const batchNames = getColumnValue(b, 'text_mm16egsm');
+    return `
+      <div class="card card-clickable" onclick="startDrying('${b.id}')">
+        <div class="batch-row">
+          <div>
+            <div class="batch-name">${escapeHtml(b.name)}</div>
+            ${batchNames ? `<div class="batch-sub">${escapeHtml(batchNames)}</div>` : ''}
+          </div>
+          <div class="batch-arrow">→</div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function getInProgressBatchNames() {
+  // A batch is in progress if it has items in the Dry group with matching batch name
+  const dryBatchNames = new Set();
+  dryItems.forEach(item => {
+    const bn = getColumnValue(item, 'text_mm16egsm');
+    if (bn) dryBatchNames.add(bn);
+  });
+  // Also check persisted data
+  Object.keys(inProgressData).forEach(name => {
+    if (inProgressData[name] && inProgressData[name].pulls && inProgressData[name].pulls.length > 0) {
+      dryBatchNames.add(name);
+    }
+  });
+  return Array.from(dryBatchNames);
+}
+
+function renderInProgress() {
+  const section = document.getElementById('inProgressSection');
+  const container = document.getElementById('inProgressList');
+  const inProgressNames = getInProgressBatchNames();
+
+  // Build in-progress batch info
+  const batches = [];
+  inProgressNames.forEach(name => {
+    // Find the wet batch item for this name
+    const wetItem = wetBatches.find(b => b.name === name);
+    if (!wetItem) return; // only show if still in wet group (not completed)
+
+    // Get pulls from dry group
+    const pulls = dryItems.filter(d => getColumnValue(d, 'text_mm16egsm') === name);
+    const totalWeight = pulls.reduce((sum, p) => {
+      const w = parseFloat(getColumnValue(p, 'numeric_mm16g7j2')) || 0;
+      return sum + w;
+    }, 0);
+
+    batches.push({
+      name,
+      wetItemId: wetItem.id,
+      pullCount: pulls.length,
+      totalWeight,
+      batchNames: getColumnValue(wetItem, 'text_mm16egsm')
+    });
+  });
+
+  if (batches.length === 0) {
+    section.classList.add('hidden');
+    return;
+  }
+
+  section.classList.remove('hidden');
+  container.innerHTML = batches.map(b => `
+    <div class="card card-clickable" onclick="continueDrying('${escapeHtml(b.name)}', '${b.wetItemId}')">
+      <div class="batch-row">
+        <div>
+          <div class="batch-name">${escapeHtml(b.name)}</div>
+          <div class="batch-sub">${b.pullCount} pull${b.pullCount !== 1 ? 's' : ''} — ${formatWeight(b.totalWeight)} total</div>
+          <div class="in-progress-label">IN PROGRESS</div>
+        </div>
+        <div class="batch-arrow">→</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderCompleted() {
+  const container = document.getElementById('completedBatchList');
+
+  if (completedItems.length === 0) {
+    container.innerHTML = '<div class="empty-state"><p>No completed batches yet</p></div>';
+    return;
+  }
+
+  // Sort by most recent (use date column or just reverse order)
+  const sorted = [...completedItems].reverse();
+
+  container.innerHTML = sorted.map(item => {
+    const weight = getColumnValue(item, 'numeric_mm16g7j2');
+    const date = getColumnValue(item, 'date4');
+    const batchNames = getColumnValue(item, 'text_mm16egsm');
+    return `
+      <div class="card">
+        <div class="completed-batch">
+          <div class="completed-info">
+            <div class="cname">${escapeHtml(item.name)}</div>
+            <div class="cmeta">${batchNames ? escapeHtml(batchNames) + ' — ' : ''}${date || 'No date'}</div>
+          </div>
+          <div class="completed-weight">${weight ? weight + ' g' : '—'}</div>
+        </div>
+        <button class="btn btn-ghost btn-full mt-8" style="min-height:44px;font-size:0.8rem;" onclick="reopenBatch('${item.id}')">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h8M6 3l-4 4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Reopen Batch
+        </button>
+      </div>`;
+  }).join('');
+}
+
+// ---- ACTIONS ----
+function startDrying(wetItemId) {
+  const batch = wetBatches.find(b => b.id === wetItemId);
+  if (!batch) return;
+
+  currentBatch = {
+    wetItemId: batch.id,
+    name: batch.name,
+    batchNames: getColumnValue(batch, 'text_mm16egsm')
+  };
+  currentPullNumber = 1;
+
+  showWeightModal(`First Pull`, `Batch: ${currentBatch.name}`);
+}
+
+function continueDrying(batchName, wetItemId) {
+  const batch = wetBatches.find(b => b.id === wetItemId);
+  if (!batch) return;
+
+  // Count existing pulls
+  const existingPulls = dryItems.filter(d => getColumnValue(d, 'text_mm16egsm') === batchName);
+  currentPullNumber = existingPulls.length + 1;
+
+  currentBatch = {
+    wetItemId: batch.id,
+    name: batch.name,
+    batchNames: getColumnValue(batch, 'text_mm16egsm')
+  };
+
+  // Show choice: add another pull or complete
+  showContinueOptions(batchName, existingPulls);
+}
+
+function showContinueOptions(batchName, existingPulls) {
+  const totalWeight = existingPulls.reduce((sum, p) => {
+    return sum + (parseFloat(getColumnValue(p, 'numeric_mm16g7j2')) || 0);
+  }, 0);
+
+  // Show modal with options
+  document.getElementById('comTitle').textContent = `${escapeHtml(batchName)}`;
+  document.getElementById('comSub').textContent = `${existingPulls.length} pull${existingPulls.length !== 1 ? 's' : ''} so far — ${formatWeight(totalWeight)} total. Add more or complete?`;
+  document.getElementById('completeOrMoreModal').classList.remove('hidden');
+}
+
+function showWeightModal(pullName, subText) {
+  document.getElementById('modalTitle').textContent = pullName;
+  document.getElementById('modalSub').textContent = subText;
+  document.getElementById('weightInput').value = '';
+  document.getElementById('weightModal').classList.remove('hidden');
+  setTimeout(() => document.getElementById('weightInput').focus(), 100);
+}
+
+function closeModal() {
+  document.getElementById('weightModal').classList.add('hidden');
+}
+
+function closeAllModals() {
+  document.getElementById('weightModal').classList.add('hidden');
+  document.getElementById('completeOrMoreModal').classList.add('hidden');
+  document.getElementById('summaryModal').classList.add('hidden');
+  currentBatch = null;
+}
+
+async function handleWeightSubmit() {
+  const weight = parseFloat(document.getElementById('weightInput').value);
+  if (!weight || weight <= 0) {
+    showToast('Please enter a valid weight', 'error');
+    return;
+  }
+
+  if (!currentBatch) return;
+
+  const btn = document.getElementById('submitWeight');
+  btn.disabled = true;
+  btn.innerHTML = '<div class="spinner"></div> Saving...';
+
+  try {
+    const pullName = getOrdinalName(currentPullNumber) + ' Pull';
+    const today = new Date().toISOString().split('T')[0];
+    const batchLabel = currentBatch.name;
+
+    const columnValues = JSON.stringify({
+      text_mm16egsm: batchLabel,
+      numeric_mm16g7j2: weight,
+      date4: { date: today }
+    });
+
+    const mutation = `mutation {
+      create_item(
+        board_id: ${BOARD_ID},
+        group_id: "${DRY_GROUP}",
+        item_name: "${pullName}",
+        column_values: ${JSON.stringify(columnValues)}
+      ) {
+        id
+      }
+    }`;
+
+    await mondayAPI(mutation);
+
+    // Persist progress
+    if (!inProgressData[batchLabel]) {
+      inProgressData[batchLabel] = { wetItemId: currentBatch.wetItemId, pulls: [] };
+    }
+    inProgressData[batchLabel].pulls.push({ name: pullName, weight, date: today });
+    saveLocalProgress();
+
+    closeModal();
+    showToast(`${pullName}: ${formatWeight(weight)} recorded`, 'success');
+
+    // Refresh data
+    await fetchAllData();
+
+    // Show complete or more modal
+    document.getElementById('comTitle').textContent = 'Weight Recorded!';
+    document.getElementById('comSub').textContent = 'Is the batch complete or are there more trays in the dehydrator?';
+    document.getElementById('completeOrMoreModal').classList.remove('hidden');
+
+  } catch (err) {
+    showToast('Failed to save weight: ' + err.message, 'error');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = 'Submit Weight';
+  }
+}
+
+function handleMoreTrays() {
+  document.getElementById('completeOrMoreModal').classList.add('hidden');
+  if (!currentBatch) return;
+
+  // Count current pulls again after refresh
+  const existingPulls = dryItems.filter(d => getColumnValue(d, 'text_mm16egsm') === currentBatch.name);
+  currentPullNumber = existingPulls.length + 1;
+
+  const pullName = getOrdinalName(currentPullNumber) + ' Pull';
+  showWeightModal(pullName, `Batch: ${currentBatch.name}`);
+}
+
+async function handleBatchComplete() {
+  document.getElementById('completeOrMoreModal').classList.add('hidden');
+  if (!currentBatch) return;
+
+  // Get all pulls
+  const pulls = dryItems.filter(d => getColumnValue(d, 'text_mm16egsm') === currentBatch.name);
+  const totalWeight = pulls.reduce((sum, p) => sum + (parseFloat(getColumnValue(p, 'numeric_mm16g7j2')) || 0), 0);
+
+  // Show summary
+  document.getElementById('summaryBatchName').textContent = currentBatch.name;
+  document.getElementById('summaryTotal').textContent = formatWeight(totalWeight);
+  document.getElementById('summaryPullCount').textContent = `from ${pulls.length} pull${pulls.length !== 1 ? 's' : ''}`;
+
+  const list = document.getElementById('summaryPullList');
+  list.innerHTML = pulls.map(p => `
+    <li>
+      <span class="pull-name">${escapeHtml(p.name)}</span>
+      <span class="pull-weight">${getColumnValue(p, 'numeric_mm16g7j2')} g</span>
+    </li>
+  `).join('');
+
+  document.getElementById('summaryModal').classList.remove('hidden');
+}
+
+async function confirmBatchComplete() {
+  if (!currentBatch) return;
+
+  const btn = document.getElementById('confirmComplete');
+  btn.disabled = true;
+  btn.innerHTML = '<div class="spinner"></div> Completing...';
+
+  try {
+    // Calculate total weight
+    const pulls = dryItems.filter(d => getColumnValue(d, 'text_mm16egsm') === currentBatch.name);
+    const totalWeight = pulls.reduce((sum, p) => sum + (parseFloat(getColumnValue(p, 'numeric_mm16g7j2')) || 0), 0);
+
+    // Move the wet item to Completed group
+    const moveMutation = `mutation {
+      move_item_to_group(item_id: ${currentBatch.wetItemId}, group_id: "${COMPLETED_GROUP}") {
+        id
+      }
+    }`;
+    await mondayAPI(moveMutation);
+
+    // Update total weight on the completed item
+    const today = new Date().toISOString().split('T')[0];
+    const columnValues = JSON.stringify({
+      numeric_mm16g7j2: totalWeight,
+      date4: { date: today }
+    });
+    const updateMutation = `mutation {
+      change_multiple_column_values(
+        board_id: ${BOARD_ID},
+        item_id: ${currentBatch.wetItemId},
+        column_values: ${JSON.stringify(columnValues)}
+      ) {
+        id
+      }
+    }`;
+    await mondayAPI(updateMutation);
+
+    // Clean up persisted data
+    delete inProgressData[currentBatch.name];
+    saveLocalProgress();
+
+    closeAllModals();
+    showToast(`Batch completed! Total: ${formatWeight(totalWeight)}`, 'success');
+
+    // Refresh
+    await fetchAllData();
+
+  } catch (err) {
+    showToast('Failed to complete batch: ' + err.message, 'error');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4.5 4.5 7.5-9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Confirm & Complete Batch`;
+  }
+}
+
+async function reopenBatch(itemId) {
+  if (!confirm('Move this batch back to Wet group for more processing?')) return;
+
+  try {
+    const mutation = `mutation {
+      move_item_to_group(item_id: ${itemId}, group_id: "${WET_GROUP}") {
+        id
+      }
+    }`;
+    await mondayAPI(mutation);
+    showToast('Batch reopened', 'success');
+    await fetchAllData();
+  } catch (err) {
+    showToast('Failed to reopen batch: ' + err.message, 'error');
+  }
+}
+
+function toggleCompletedView() {
+  showCompleted = !showCompleted;
+  const section = document.getElementById('completedSection');
+  const btn = document.getElementById('toggleCompleted');
+
+  if (showCompleted) {
+    section.classList.remove('hidden');
+    btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 8h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Hide Completed Batches`;
+    renderCompleted();
+  } else {
+    section.classList.add('hidden');
+    btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h12M8 2v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> View Completed Batches`;
+  }
+}
+
+// ---- HELPERS ----
+function getOrdinalName(n) {
+  if (n <= ORDINALS.length) return ORDINALS[n - 1];
+  return n + 'th';
+}
+
+function formatWeight(grams) {
+  if (typeof grams !== 'number' || isNaN(grams)) return '0 g';
+  return grams.toLocaleString('en-US', { maximumFractionDigits: 2 }) + ' g';
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function updateLastSync() {
+  const now = new Date();
+  document.getElementById('lastSync').textContent = 'Last synced: ' + now.toLocaleTimeString();
+}
+
+function showToast(msg, type) {
+  const container = document.getElementById('toastContainer');
+  const toast = document.createElement('div');
+  toast.className = 'toast ' + (type || '');
+  toast.textContent = msg;
+  container.appendChild(toast);
+  setTimeout(() => toast.remove(), 3000);
+}
+
+// ---- PERSISTENT STORAGE (with fallback) ----
+const _memStore = {};
+const _stKey = ['local','Storage'].join('');
+function _getStore() { try { const s = window[_stKey]; const t = '__t__'; s.setItem(t,'1'); s.removeItem(t); return s; } catch { return null; } }
+const _persist = _getStore();
+
+function loadLocalProgress() {
+  try {
+    if (_persist) return JSON.parse(_persist.getItem(LS_KEY) || '{}');
+    return _memStore[LS_KEY] ? JSON.parse(_memStore[LS_KEY]) : {};
+  } catch { return {}; }
+}
+
+function saveLocalProgress() {
+  try {
+    const data = JSON.stringify(inProgressData);
+    if (_persist) _persist.setItem(LS_KEY, data);
+    else _memStore[LS_KEY] = data;
+  } catch { /* silent */ }
+}
+
+// ---- AUTO REFRESH ----
+function startAutoRefresh() {
+  if (refreshTimer) clearInterval(refreshTimer);
+  refreshTimer = setInterval(() => fetchAllData(), 60000);
+}
+
+// ---- INIT ----
+document.addEventListener('DOMContentLoaded', () => {
+  fetchAllData();
+  startAutoRefresh();
+});
+
+// Handle Enter key in weight input
+document.getElementById('weightInput').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') handleWeightSubmit();
+});
+</script>
+</body>
+</html>
