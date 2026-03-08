@@ -602,7 +602,7 @@ footer a:hover {
   <div id="completeOrMoreModal" class="modal-overlay hidden" onclick="if(event.target===this)closeAllModals()">
     <div class="modal text-center">
       <h2 id="comTitle">Weight Recorded!</h2>
-      <p class="modal-sub" id="comSub">Is the batch complete or are there more trays?</p>
+      <p class="modal-sub" id="comSub">Is the batch complete or still drying?</p>
       <div class="btn-group">
         <button class="btn btn-success" onclick="handleBatchComplete()">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4.5 4.5 7.5-9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -610,7 +610,7 @@ footer a:hover {
         </button>
         <button class="btn btn-warning" onclick="handleMoreTrays()">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M4 10h12" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
-          MORE TRAYS
+          BATCH STILL DRYING
         </button>
       </div>
     </div>
@@ -921,7 +921,7 @@ function showContinueOptions(batchName, existingPulls) {
 
   // Show modal with options
   document.getElementById('comTitle').textContent = `${escapeHtml(batchName)}`;
-  document.getElementById('comSub').textContent = `${existingPulls.length} pull${existingPulls.length !== 1 ? 's' : ''} so far — ${formatWeight(totalWeight)} total. Add more or complete?`;
+  document.getElementById('comSub').textContent = `${existingPulls.length} pull${existingPulls.length !== 1 ? 's' : ''} so far — ${formatWeight(totalWeight)} total. Still drying or complete?`;
   document.getElementById('completeOrMoreModal').classList.remove('hidden');
 }
 
@@ -996,7 +996,7 @@ async function handleWeightSubmit() {
 
     // Show complete or more modal
     document.getElementById('comTitle').textContent = 'Weight Recorded!';
-    document.getElementById('comSub').textContent = 'Is the batch complete or are there more trays in the dehydrator?';
+    document.getElementById('comSub').textContent = 'Is the batch complete or still drying?';
     document.getElementById('completeOrMoreModal').classList.remove('hidden');
 
   } catch (err) {
