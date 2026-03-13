@@ -494,6 +494,74 @@ body {
   margin-bottom: 20px;
 }
 
+/* ========== LIVE TOTAL BAR ========== */
+.live-total-bar {
+  background: rgba(59,130,246,0.08);
+  border: 1px solid rgba(59,130,246,0.25);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.live-total-bar.has-value {
+  border-color: rgba(16,185,129,0.4);
+  background: rgba(16,185,129,0.08);
+}
+.live-total-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+.live-total-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #3b82f6;
+  transition: color 0.2s ease;
+}
+.live-total-bar.has-value .live-total-value {
+  color: #10b981;
+}
+.live-total-breakdown {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* ========== COMPLETE-OR-MORE TOTAL DISPLAY ========== */
+.com-total-display {
+  background: rgba(16,185,129,0.08);
+  border: 1px solid rgba(16,185,129,0.25);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.com-total-display .com-total-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  margin-bottom: 2px;
+}
+.com-total-display .com-total-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #10b981;
+}
+.com-total-display .com-total-pulls {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+.com-total-display:empty {
+  display: none;
+}
+
 /* ========== FOOTER ========== */
 footer {
   text-align: center;
@@ -592,6 +660,11 @@ footer a:hover {
         <input type="number" id="weightInput" class="form-input" placeholder="0" min="0" step="0.01" inputmode="decimal">
         <div class="form-suffix">Enter dry crude weight in grams</div>
       </div>
+      <div id="liveTotalBar" class="live-total-bar hidden">
+        <div class="live-total-label">Running Total</div>
+        <div class="live-total-value" id="liveTotalValue">0 g</div>
+        <div class="live-total-breakdown" id="liveTotalBreakdown"></div>
+      </div>
       <button class="btn btn-primary btn-full" id="submitWeight" onclick="handleWeightSubmit()">
         Submit Weight
       </button>
@@ -603,6 +676,7 @@ footer a:hover {
     <div class="modal text-center">
       <h2 id="comTitle">Weight Recorded!</h2>
       <p class="modal-sub" id="comSub">Is the batch complete or still drying?</p>
+      <div id="comTotalDisplay" class="com-total-display"></div>
       <div class="btn-group">
         <button class="btn btn-success" onclick="handleBatchComplete()">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4.5 4.5 7.5-9" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -919,9 +993,14 @@ function showContinueOptions(batchName, existingPulls) {
     return sum + (parseFloat(getColumnValue(p, 'numeric_mm16g7j2')) || 0);
   }, 0);
 
-  // Show modal with options
+  // Show modal with options and total display
   document.getElementById('comTitle').textContent = `${escapeHtml(batchName)}`;
-  document.getElementById('comSub').textContent = `${existingPulls.length} pull${existingPulls.length !== 1 ? 's' : ''} so far — ${formatWeight(totalWeight)} total. Still drying or complete?`;
+  document.getElementById('comSub').textContent = 'Still drying or complete?';
+  document.getElementById('comTotalDisplay').innerHTML = `
+    <div class="com-total-label">Batch Total So Far</div>
+    <div class="com-total-number">${formatWeight(totalWeight)}</div>
+    <div class="com-total-pulls">${existingPulls.length} pull${existingPulls.length !== 1 ? 's' : ''}</div>
+  `;
   document.getElementById('completeOrMoreModal').classList.remove('hidden');
 }
 
@@ -929,8 +1008,61 @@ function showWeightModal(pullName, subText) {
   document.getElementById('modalTitle').textContent = pullName;
   document.getElementById('modalSub').textContent = subText;
   document.getElementById('weightInput').value = '';
+  
+  // Set up live total bar
+  const liveTotalBar = document.getElementById('liveTotalBar');
+  const previousTotal = getPreviousPullsTotal();
+  
+  if (previousTotal > 0 || currentPullNumber > 1) {
+    // Show the bar with existing total from previous pulls
+    liveTotalBar.classList.remove('hidden');
+    liveTotalBar.classList.remove('has-value');
+    document.getElementById('liveTotalValue').textContent = formatWeight(previousTotal);
+    document.getElementById('liveTotalBreakdown').textContent = `${currentPullNumber - 1} previous pull${currentPullNumber - 1 !== 1 ? 's' : ''} + this entry`;
+  } else {
+    // First pull — still show the bar so they can see their entry as the total
+    liveTotalBar.classList.remove('hidden');
+    liveTotalBar.classList.remove('has-value');
+    document.getElementById('liveTotalValue').textContent = '0 g';
+    document.getElementById('liveTotalBreakdown').textContent = 'Total will update as you type';
+  }
+
   document.getElementById('weightModal').classList.remove('hidden');
   setTimeout(() => document.getElementById('weightInput').focus(), 100);
+}
+
+function getPreviousPullsTotal() {
+  if (!currentBatch) return 0;
+  const pulls = dryItems.filter(d => getColumnValue(d, 'text_mm16egsm') === currentBatch.name);
+  return pulls.reduce((sum, p) => sum + (parseFloat(getColumnValue(p, 'numeric_mm16g7j2')) || 0), 0);
+}
+
+function updateLiveTotal() {
+  const liveTotalBar = document.getElementById('liveTotalBar');
+  const liveTotalValue = document.getElementById('liveTotalValue');
+  const liveTotalBreakdown = document.getElementById('liveTotalBreakdown');
+  
+  const currentEntry = parseFloat(document.getElementById('weightInput').value) || 0;
+  const previousTotal = getPreviousPullsTotal();
+  const newTotal = previousTotal + currentEntry;
+  
+  liveTotalValue.textContent = formatWeight(newTotal);
+  
+  if (currentEntry > 0) {
+    liveTotalBar.classList.add('has-value');
+    if (previousTotal > 0) {
+      liveTotalBreakdown.textContent = `${formatWeight(previousTotal)} previous + ${formatWeight(currentEntry)} this pull`;
+    } else {
+      liveTotalBreakdown.textContent = `This pull: ${formatWeight(currentEntry)}`;
+    }
+  } else {
+    liveTotalBar.classList.remove('has-value');
+    if (previousTotal > 0) {
+      liveTotalBreakdown.textContent = `${currentPullNumber - 1} previous pull${currentPullNumber - 1 !== 1 ? 's' : ''} + this entry`;
+    } else {
+      liveTotalBreakdown.textContent = 'Total will update as you type';
+    }
+  }
 }
 
 function closeModal() {
@@ -994,9 +1126,18 @@ async function handleWeightSubmit() {
     // Refresh data
     await fetchAllData();
 
-    // Show complete or more modal
+    // Show complete or more modal with total
+    const allPulls = dryItems.filter(d => getColumnValue(d, 'text_mm16egsm') === currentBatch.name);
+    const newTotal = allPulls.reduce((sum, p) => sum + (parseFloat(getColumnValue(p, 'numeric_mm16g7j2')) || 0), 0);
+    const pullCount = allPulls.length;
+    
     document.getElementById('comTitle').textContent = 'Weight Recorded!';
     document.getElementById('comSub').textContent = 'Is the batch complete or still drying?';
+    document.getElementById('comTotalDisplay').innerHTML = `
+      <div class="com-total-label">Batch Total So Far</div>
+      <div class="com-total-number">${formatWeight(newTotal)}</div>
+      <div class="com-total-pulls">${pullCount} pull${pullCount !== 1 ? 's' : ''}</div>
+    `;
     document.getElementById('completeOrMoreModal').classList.remove('hidden');
 
   } catch (err) {
@@ -1199,6 +1340,9 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('weightInput').addEventListener('keydown', (e) => {
   if (e.key === 'Enter') handleWeightSubmit();
 });
+
+// Live total update as operator types
+document.getElementById('weightInput').addEventListener('input', updateLiveTotal);
 </script>
 </body>
 </html>
